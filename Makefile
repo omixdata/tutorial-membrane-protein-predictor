@@ -1,6 +1,9 @@
+info:
+	more README.md
+
 install:
 	apt install python3-pip
-	pip3 install -r requirements
+	pip3 install -r requirements.txt
 
 download:
 	wget -O data/cyt_proteins.fasta \

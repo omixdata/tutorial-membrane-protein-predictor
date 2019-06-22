@@ -19,7 +19,7 @@
 
 ```
 # instalar dependências
-make install
+sudo make install
 
 # baixar dados do UniProt
 make download
@@ -33,6 +33,5 @@ make train
 # rodar servidor web
 make server
 ```
-
 
 
