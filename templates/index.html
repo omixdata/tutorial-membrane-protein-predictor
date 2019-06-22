@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Membrane Protein Predictor</title>
+</head>
+<body>
+    <h1>Membrane Protein Predictor</h1>
+    <form action="/predict" method="POST">
+        <textarea name="sequence" placeholder=">sequence ..." 
+            style="width: 400px; height: 100px"></textarea><br>
+        <input type="submit" value="submit">
+    </form>
+    <hr>
+    {% if result %}
+        <h2>Result of Analysis:</h2>
+        <pre>{{result['sequence']}}</pre>
+        Protein Location: {{result['location']}} <br>
+        Probability (membrane): {{result['probability']}} <br>
+    {% endif %}
+</body>
+</html>
