@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, redirect, render_template
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 import pickle
 import pandas as pd
@@ -16,7 +16,9 @@ def index():
 
 @app.route("/predict", methods=['GET', 'POST'])
 def predict():
-
+    if request.method == "GET":
+        return redirect("/")
+    
     sequence = request.form['sequence']
     protein_data = get_protein_composition(sequence)
     dataframe = pd.DataFrame([protein_data])

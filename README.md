@@ -33,3 +33,6 @@ make train
 # rodar servidor web
 make server
 ```
+
+
+
